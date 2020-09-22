@@ -6,13 +6,20 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database-platform: com.bluearin.jpastudy3.support.CustomMysqlDialect
     open-in-view: true
     show-sql: true
     properties:
       hibernate:
         format_sql: true
         ddl-auto: none
+        generate_statistics: true
+        order_inserts: true
+        order_updates: true
+        jdbc:
+          batch_size: 10
+
+
 
 logging:
   level:
